@@ -1,0 +1,73 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+@import "skeleton/component/reset";
+@import "skeleton/component/typography";
+@import "skeleton/component/buttons";
+@import "skeleton/component/forms";
+@import "skeleton/component/grid";
+
+/*
+* Main CSS styling
+*/
+
+/*
+* Default CSS styling
+*/
+@displayFont: Georgia;
+@font-family: @displayFont, "Times New Roman", Times, serif;
+@font-size: 14px;
+@line-height: 20px;
+@main-color: #2b2b2b;
+
+.default-font ()  {
+    font-family: @font-family;
+    font-size: @font-size;
+    line-height: @line-height;
+    color: @main-color;
+    font-weight:normal;
+}
+
+.box-sizing() {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+a {
+	color: #2b2b2b;
+}
+
+img {
+	max-width: 100%;
+}
+body {
+    padding: 0;
+    margin: 0;
+  //  background: #212121;
+    -webkit-font-smoothing: antialiased;
+    .default-font; 
+}
+.content {
+	.upload-image {
+		padding: 20px;
+		border: 2px solid #ccc;
+		label {
+			display: inline-block;
+			padding-right: 10px;
+			margin-bottom: 10px;
+		}
+		input[type=file] {
+			width: 500px;
+		}
+		input[type=submit] {
+			width: 70px;
+			margin-bottom: 0px;
+		}
+	}
+}
