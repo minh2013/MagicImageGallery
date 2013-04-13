@@ -1,21 +1,21 @@
 <?php include('tpl/header.php'); ?>
-
-<!-- Primary Page Layout
-================================================== -->
-
-<!-- Delete everything in this .container and get started on your own site! -->
+<?php include ("library/image.php"); ?>
 
 <div class="container content">
-	<div class="sixteen columns">
+    <div class="sixteen columns">
         <h2>Upload an image</h2>
         <form action="upload_file.php" method="post" enctype="multipart/form-data" class="upload-image">
             <label for="file">Filename:</label>
             <input type="file" name="file" id="file"><br>
             <input type="submit" name="submit" value="Submit">
         </form>
-
     </div>
-</div><!-- container -->
+    <div class="sixteen columns">
+        <h2 style="margin-top: 30px;">List of images</h2>
+    </div>
+    <?php 
+        Image::showImages("uploads/large/", "uploads/thumbnail/");
+    ?>
+</div>
 
-<!-- Footer -->
 <?php include('tpl/footer.php'); ?>
