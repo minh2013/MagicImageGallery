@@ -1,3 +1,17 @@
+<?php
+	$largeImagePath = "uploads/large/";
+    $thumbnailPath = "uploads/thumbnail/";
+    $imagePath = "uploads/original/";
+    if (!file_exists($largeImagePath)) {
+        mkdir($largeImagePath);
+    }
+    if (!file_exists($thumbnailPath)) {
+        mkdir($thumbnailPath);
+    }
+    if (!file_exists($imagePath)) {
+        mkdir($imagePath);
+    }
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
