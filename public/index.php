@@ -18,5 +18,4 @@
         $listImages->showImages("uploads/large/", "uploads/thumbnail/");
     ?>
 </div>
-
 <?php include('tpl/footer.php'); ?>
