@@ -12,7 +12,17 @@
     $largeImagePath = "uploads/large/";
     $thumbnailPath = "uploads/thumbnail/";
     $imagePath = "uploads/original/";
-    
+
+    if (!file_exists($largeImagePath)) {
+        mkdir($largeImagePath, 0777, true);
+    }
+    if (!file_exists($thumbnailPath)) {
+        mkdir($thumbnailPath, 0777, true);
+    }
+    if (!file_exists($imagePath)) {
+        mkdir($imagePath, 0777, true);
+    }
+
     $arrayImageType = array("image/gif", "image/jpeg", "image/jpg", "image/png");
     
     if ($_FILES["file"]["error"] == 0) {

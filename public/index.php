@@ -14,7 +14,8 @@
         <h2 style="margin-top: 30px;">List of images</h2>
     </div>
     <?php 
-        Image::showImages("uploads/large/", "uploads/thumbnail/");
+        $listImages = new ListImages();
+        $listImages->showImages("uploads/large/", "uploads/thumbnail/");
     ?>
 </div>
 
