@@ -164,3 +164,4 @@ pip-log.txt
 
 # Uploads directory
 public/uploads/
+node_modules/
