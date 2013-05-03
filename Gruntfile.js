@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 dest: '<%= meta.path %>/js/gallery.js'
             },
             css: {
-                src: ['<%= meta.path %>/css/!(gallery).css'],
+                src: ['<%= meta.path %>/css/*.css'],
                 dest: '<%= meta.path %>/css/gallery.css'  
             }
         },
@@ -22,10 +22,18 @@ module.exports = function(grunt) {
                 dest: '<%= concat.js.dest %>'
             }    
              
+        },
+        less: {
+            prduction: {
+                files: {
+                    "<%= meta.path %>/css/gallery.css": "<%= meta.path %>/less/**/*.less"
+                }
+            }
         }
     });
     // Default task.
-    grunt.registerTask('default', ['concat', 'uglify']);
+    grunt.registerTask('default', ['less', 'concat', 'uglify']);
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-less');
 };
