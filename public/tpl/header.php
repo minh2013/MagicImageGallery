@@ -1,4 +1,5 @@
 <?php
+	include ("configuration.php");
 	include ("library/list_images.php");
 ?>
 <!DOCTYPE html>

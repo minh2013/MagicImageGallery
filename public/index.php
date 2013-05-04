@@ -1,5 +1,4 @@
 <?php include('tpl/header.php'); ?>
-<?php include ("library/image.php"); ?>
 
 <div class="container content">
     <div class="sixteen columns">
@@ -15,7 +14,7 @@
     </div>
     <?php 
         $listImages = new ListImages();
-        $listImages->showImages("uploads/large/", "uploads/thumbnail/");
+        $listImages->showImages(LARGE_IMAGE_PATH, THUMBNAIL_IMAGE_PATH);
     ?>
 </div>
 <?php include('tpl/footer.php'); ?>
