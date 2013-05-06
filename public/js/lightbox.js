@@ -1,16 +1,13 @@
 (function( $ ) {
-	var defaults = {
-        'overlayColor'          : 	'#000000',
-  		'overlayOpacity'		: 	'0.85', // value in between 0.00 and 1.00
-  		'effect'				: 	'fade', // options: fade, slide,
-  		'easing'				: 	'swing', // options: swing, linear
-  		'duration'				: 	'700',
-    };
-    var $_settings;
- 	$.fn.lightbox = function(options, defaults) {
-  		
+ 	$.fn.lightbox = function(options) {
+  		var defaults = {
+	        'overlayColor'          : 	'#000000',
+	  		'overlayOpacity'		: 	'0.85', // value in between 0.00 and 1.00
+	  		'effect'				: 	'fade', // options: fade, slide,
+	  		'easing'				: 	'swing', // options: swing, linear
+	  		'duration'				: 	'700',
+	    };
   		var $settings = $.extend({}, defaults, options);
-  		$_settings = $settings;
   		var $createOverlay = function(){
 			$('<div class="lightbox-overlay"></div>').appendTo($("body"));
 			var $lightboxOverlayHeight = $(document).height();
@@ -38,28 +35,29 @@
 			$($closeButton).appendTo(".lightbox-image-container");
 		};
 
+		var $closeButton = function(){
+			$(".lightbox-image-container").on("click", ".close-button", function(){
+		  		var $imageContainer = $(".lightbox-overlay, .lightbox-image-container");
+				if ($settings.effect != 'slide'){
+					$imageContainer.fadeOut($settings.duration, $settings.easing, function() {
+						$(this).remove();	
+					});
+				}
+				if ($settings.effect == 'slide'){
+					$imageContainer.slideUp($settings.duration, $settings.easing, function() {
+						$(this).remove();	
+					});
+				}
+			});
+		};
+
   		return this.click( function(e) {        
 			var $imagePath = $(this).attr("href");
 			$createOverlay();	
 			$showImage($imagePath);
 			$showClosePopUpButton();
+			$closeButton();
 			e.preventDefault();
-	    });
-
-  		
+	    });		
   	};
-  	$(document).on("click", ".close-button", function(){
-  		var $imageContainer = $(".lightbox-overlay, .lightbox-image-container");
-		if ($_settings.effect != 'slide'){
-			$imageContainer.fadeOut($_settings.duration, $_settings.easing, function() {
-				$(this).remove();	
-			});
-		}
-		if ($_settings.effect == 'slide'){
-			$imageContainer.slideUp($_settings.duration, $_settings.easing, function() {
-				$(this).remove();	
-			});
-		}
-	});
-
 })( jQuery );
