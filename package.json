@@ -1,0 +1,21 @@
+{
+  "name": "MagicImageGallery",
+  "description": "The JavaScript Task Runner for Magic Image Gallery project",
+  "version": "0.1.0",
+  "author": {
+    "name": "Minh",
+    "email": "minh@pictura.com.au"
+  },
+  "engines": {
+    "node": ">= 0.10.5"
+  },
+  "repository": {
+    "type": "web",
+    "url": "https://github.com/minh2013/MagicImageGallery.git"
+  },
+  "devDependencies": {
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-less": "~0.5.1"
+  }
+}
